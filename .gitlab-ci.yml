@@ -42,12 +42,11 @@ deploy_staging:
   when: always
   only:
     - master
-    - /feature-.*/
+    - feature-.*
 
 deploy_prod:
   stage: deploy
   script:
-#    - mkdir $DOCKER_HTML_PATH/$ENV/$CI_COMMIT_BRANCH
     - cp -r build_$ENV $DOCKER_HTML_PATH/test-app/${ENV}_$CI_COMMIT_SHA
     - cp -Pv $DOCKER_HTML_PATH/$DEPLOY_SUBFOLDER $DOCKER_HTML_PATH/test-app/${ENV}_$CI_COMMIT_SHA/prev-version || true
   only:
