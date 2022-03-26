@@ -5,7 +5,7 @@ stages:
   - revert
 
 variables:
-  DOCKER_HTML_PATH: "/www"
+  DOCKER_HTML_PATH: "/var/www"
   ENV: prod
   DEPLOY_SUBFOLDER: html
 
