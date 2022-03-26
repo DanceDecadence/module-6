@@ -8,6 +8,7 @@ variables:
   DOCKER_HTML_PATH: "/var/www"
   ENV: prod
   DEPLOY_SUBFOLDER: html
+  
 
 install_dependencies:
   image: node:14.15.0-stretch
@@ -26,6 +27,9 @@ install_dependencies:
         - yarn.lock
     paths:
       - node_modules
+  variables:
+    REACT_APP_WEBSITE_PREFIX: "[branch=$CI_COMMIT_BRANCH]"
+    ENV: prod
 
 build_staging:
   extends: install_dependencies
