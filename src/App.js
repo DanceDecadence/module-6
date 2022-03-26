@@ -8,7 +8,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
 	<h1>Test of revert</h1>
         <p>
-          First 1
+          Second 2
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <a
