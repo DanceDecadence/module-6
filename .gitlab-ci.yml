@@ -77,12 +77,12 @@ revert:
   when: manual
   script:
     - rm $DOCKER_HTML_PATH/$DEPLOY_SUBFOLDER
-    - cp -Pv $DOCKER_HTML_PATH/test-app/${ENV}/$CI_COMMIT_SHA/prev-version $DOCKER_HTML_PATH/html
+    - cp -Pv $DOCKER_HTML_PATH/test-app/${ENV}_$CI_COMMIT_SHA/prev-version $DOCKER_HTML_PATH/html
 
 revert_2:
   stage: revert
   when: manual
   script:
     - rm $DOCKER_HTML_PATH/$DEPLOY_SUBFOLDER
-    - cp -Pv $DOCKER_HTML_PATH/test-app/${ENV}/$CI_COMMIT_BEFORE_SHA/prev-version $DOCKER_HTML_PATH/$DEPLOY_SUBFOLDER
+    - cp -Pv $DOCKER_HTML_PATH/test-app/${ENV}_$CI_COMMIT_BEFORE_SHA/prev-version $DOCKER_HTML_PATH/$DEPLOY_SUBFOLDER
 
